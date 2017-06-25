@@ -18,7 +18,7 @@ hexo.extend.filter.register('after_render:css', filters.css);
 /**
  * Js config.
  */
-const uglifyDefaults = {
+const uglifyjsDefaults = {
   mangle: true
 };
 
@@ -26,7 +26,7 @@ const jsConfig = {
   exclude: ['*.min.js']
 };
 
-hexo.config.asset_pipeline.uglify = Object.assign(uglifyDefaults, jsConfig, hexo.config.asset_pipeline.uglify);
+hexo.config.asset_pipeline.uglifyjs = Object.assign(uglifyjsDefaults, jsConfig, hexo.config.asset_pipeline.uglifyjs);
 
 hexo.extend.filter.register('after_render:js', filters.js);
 
