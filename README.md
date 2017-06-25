@@ -1,6 +1,6 @@
 # hexo-asset-pipeline
 
-Asset pipeline for [Hexo](https://hexo.io/) to support minification and optiomization of HTML, CSS, JS and images.
+Asset pipeline for [Hexo](https://hexo.io/) to support minification and optimization of HTML, CSS, JS and images.
 
 Supports hexo 3.x.x.
 
