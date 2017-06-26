@@ -75,18 +75,31 @@ hexo.extend.filter.register('after_generate', filters.image);
 /**
  * Hook to enable revisioning.
  */
-if(hexo.config.asset_pipeline.revisioning){
+const revisioningDefaults = {};
+const soupConfig = {
+  selectors: {
+    'img[data-src]': 'data-src',
+    'img[src]': 'src',
+    'link[rel="apple-touch-icon"]': 'href',
+    'link[rel="icon"]': 'href',
+    'link[rel="shortcut icon"]': 'href',
+    'link[rel="stylesheet"]': 'href',
+    'script[src]': 'src',
+    'source[src]': 'src',
+    'video[poster]': 'poster'
+  }
+};
+hexo.config.asset_pipeline.revisioning= Object.assign(revisioningDefaults, soupConfig, hexo.config.asset_pipeline.revisioning);
+
+if(hexo.config.asset_pipeline.revisioning.enable){
   hexo.extend.filter.register('after_generate', revision);
 }
-
 hexo.extend.filter.register('after_init', function(){
-  // Init
   // Setup assetPipeline for caching data
   hexo.assetPipeline = {
     revIndex: {}
   }
 });
-
 hexo.extend.filter.register('before_exit', function(){
   //Cleanup
   delete hexo.assetPipeline;

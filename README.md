@@ -17,7 +17,8 @@ Add the following snippet in `_config.yml`.
 Minimal config to enable filters for HTML, CSS, Js and images.
 ```yaml
 asset_pipeline:
-  revisioning: true
+  revisioning:
+    enable: true
   clean_css:
     enable: true
   uglify_js:
@@ -27,7 +28,7 @@ asset_pipeline:
   html_minifier:
     enable: true
 ```
-- **revisioning** - Enabling revisioning(md5 hash) of assets. Defaults to false.
+- **revisioning** - Enabling revisioning of assets..
 - **clean_css** - Adding options for [clean-css](https://www.npmjs.com/package/clean-css).
 - **uglify_js** - Adding options for [uglify-js](https://www.npmjs.com/package/uglify-js).
 - **imagemin** - Adding options for [imagemin](https://www.npmjs.com/package/imagemin).
@@ -41,6 +42,7 @@ Following are the modules that are being used to process differnet types of asse
 
 [html-minifier](https://www.npmjs.com/package/html-minifier) is used to minify the HTML files.
 
+Following is the config for html-minifier.
 #### Options
 ``` yaml
 html_minifier:
@@ -52,11 +54,25 @@ html_minifier:
 - **ignore_error** - Ignore the error occurred on parsing html
 - **exclude**: Exclude files
 
+#### html_minifier defaults
+```yaml
+html_minifier
+  ignoreCustomComments: [/^\s*more/]
+  removeComments: true
+  removeCommentsFromCDATA: true
+  collapseWhitespace: true
+  collapseBooleanAttributes: true
+  removeEmptyAttributes: true
+  minifyJS: true
+  minifyCSS: true
+```
+
 **Note**: Check [html-minifier](https://www.npmjs.com/package/html-minifier#options-quick-reference) for more options.
 
 ### Javascripts (uglify_js)
 [uglify-js](https://www.npmjs.com/package/uglify-js) is used to minify javascripts.
 
+Following is the config for uglify-js.
 #### Options
 ``` yaml
 uglify_js:
@@ -73,12 +89,20 @@ uglify_js:
 - **compress**: Compress options
 - **exclude**: Exclude files
 
+#### uglify-js defaults
+```yaml
+uglify_js:
+  mangle: true
+  exclude: ['*.min.js']
+```
+
 
 **Note**: Check [uglify-js](https://www.npmjs.com/package/uglify-js#minify-options) for more options.
 
 ### Stylesheets (clean_css)
 [clean-css](https://www.npmjs.com/package/clean-css) is used to minify stylesheets.
 
+Following is the config for clean-css.
 #### Options
 ``` yaml
 clean_css:
@@ -89,6 +113,12 @@ clean_css:
 - **enable** - Enable the plugin. Defaults to `false`.
 - **exclude**: Exclude files
 
+#### clean-css defaults
+```yaml
+clean_css:
+  exclude: ['*.min.css']
+```
+
 
 **Note**: Check [clean-css](https://www.npmjs.com/package/clean-css#use) for more options.
 
@@ -96,6 +126,7 @@ clean_css:
 ### Images (imagemin)
 [imagemin](https://www.npmjs.com/package/clean-css) is used to optimize images.
 
+Following is the config for imagemin.
 #### Options
 ```yaml
 imagemin:
@@ -114,5 +145,41 @@ imagemin:
 - **progressive** - Lossless conversion to progressive. Defaults to `false`.
 - **exclude** - Exclude specific types of image files, the input value could be `gif`,`jpg`, `png`, or `svg`. Default to null.
 
+#### imagemin defaults
+```yaml
+imagemin:
+  interlaced: false
+  multipass: false
+  optimizationLevel: 3
+  pngquant: false
+  progressive: false
+```
 **Note**: Check [imagemin](https://www.npmjs.com/package/clean-css#use) for more options.
 
+### Revisioning
+```yaml
+revisioning:
+  enable: true
+  keep: true
+  selectors:
+    'img[data-orign]':  data-orign
+    'img[data-src]': 'data-src'
+    'img[src]': 'src'
+```
+- **enable** - Enable the revisioning of assets. Defaults to `false`.
+- **keep** - Keep original assets. Defaults to `false`.
+- **selectors** - It is used so that custom implementations can be processed. Any attribute matching the key will have the asset url in the value. For instance in above example any element matching to `img[data-orign]` will have the URL for asset in `data-origin` attribute, this specific case can be helpful for [jquery lazyload](https://github.com/tuupola/jquery_lazyload) implementations.
+
+#### Defaults for selectors;
+```yaml
+  selectors:
+    'img[data-src]': 'data-src'
+    'img[src]': 'src'
+    'link[rel="apple-touch-icon"]': 'href'
+    'link[rel="icon"]': 'href'
+    'link[rel="shortcut icon"]': 'href'
+    'link[rel="stylesheet"]': 'href'
+    'script[src]': 'src'
+    'source[src]': 'src'
+    'video[poster]': 'poster'
+```
