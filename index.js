@@ -78,3 +78,16 @@ hexo.extend.filter.register('after_generate', filters.image);
 if(hexo.config.asset_pipeline.revisioning){
   hexo.extend.filter.register('after_generate', revision);
 }
+
+hexo.extend.filter.register('after_init', function(){
+  // Init
+  // Setup assetPipeline for caching data
+  hexo.assetPipeline = {
+    revIndex: {}
+  }
+});
+
+hexo.extend.filter.register('before_exit', function(){
+  //Cleanup
+  delete hexo.assetPipeline;
+});
