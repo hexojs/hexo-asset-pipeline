@@ -1,4 +1,5 @@
 const filters = require('./lib/filters');
+const revision = require('./lib/revision');
 
 
 /**
@@ -26,7 +27,7 @@ const jsConfig = {
   exclude: ['*.min.js']
 };
 
-hexo.config.asset_pipeline.uglifyjs = Object.assign(uglifyjsDefaults, jsConfig, hexo.config.asset_pipeline.uglifyjs);
+hexo.config.asset_pipeline.uglify_js = Object.assign(uglifyjsDefaults, jsConfig, hexo.config.asset_pipeline.uglify_js);
 
 hexo.extend.filter.register('after_render:js', filters.js);
 
@@ -72,6 +73,8 @@ hexo.extend.filter.register('after_generate', filters.image);
 
 
 /**
- * Fonts config.
+ * Hook to enable revisioning.
  */
-// hexo.extend.filter.register('after_generate', filters.fonts);
+if(hexo.config.asset_pipeline.revisioning){
+  hexo.extend.filter.register('after_generate', revision);
+}

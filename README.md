@@ -17,15 +17,21 @@ Add the following snippet in `_config.yml`.
 Minimal config to enable filters for HTML, CSS, Js and images.
 ```yaml
 asset_pipeline:
+  revisioning: true
   clean_css:
     enable: true
-  uglify:
+  uglify_js:
     enable: true
   imagemin:
     enable: true
   html_minifier:
     enable: true
 ```
+- **revisioning** - Enabling revisioning(md5 hash) of assets. Defaults to false.
+- **clean_css** - Adding options for [clean-css](https://www.npmjs.com/package/clean-css).
+- **uglify_js** - Adding options for [uglify-js](https://www.npmjs.com/package/uglify-js).
+- **imagemin** - Adding options for [imagemin](https://www.npmjs.com/package/imagemin).
+- **html_minifier** - Adding options for [html-minifier](https://www.npmjs.com/package/html-minifier).
 
 
 ## Components
@@ -46,14 +52,14 @@ html_minifier:
 - **ignore_error** - Ignore the error occurred on parsing html
 - **exclude**: Exclude files
 
-**Note**: Check [html_minifier](https://www.npmjs.com/package/html-minifier#options-quick-reference) for more options.
+**Note**: Check [html-minifier](https://www.npmjs.com/package/html-minifier#options-quick-reference) for more options.
 
-### Javascripts (uglifyjs)
-[https://www.npmjs.com/package/uglifyjs](uglifyjs) is used to minify javascripts.
+### Javascripts (uglify_js)
+[https://www.npmjs.com/package/uglify-js](uglify-js) is used to minify javascripts.
 
 #### Options
 ``` yaml
-uglifyjs:
+uglify_js:
   enable: true
   mangle: true
   output:
@@ -68,7 +74,7 @@ uglifyjs:
 - **exclude**: Exclude files
 
 
-**Note**: Check [uglifyjs](https://www.npmjs.com/package/uglifyjs#usage) for more options.
+**Note**: Check [uglify-js](https://www.npmjs.com/package/uglify-js#minify-options) for more options.
 
 ### Stylesheets (clean_css)
 [https://www.npmjs.com/package/clean-css](clean-css) is used to minify stylesheets.
@@ -109,10 +115,4 @@ imagemin:
 - **exclude** - Exclude specific types of image files, the input value could be `gif`,`jpg`, `png`, or `svg`. Default to null.
 
 **Note**: Check [imagemin](https://www.npmjs.com/package/clean-css#use) for more options.
-
-
-## TODO
-
-* Versioning of assets.
-* Add fonts for versioning.
 

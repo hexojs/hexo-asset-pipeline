@@ -33,6 +33,7 @@
   "dependencies": {
     "bluebird": "^3.5.0",
     "clean-css": "^4.1.4",
+    "hasha": "^3.0.0",
     "html-minifier": "^3.5.2",
     "imagemin": "^5.3.1",
     "imagemin-gifsicle": "^5.1.0",
@@ -42,6 +43,8 @@
     "imagemin-pngquant": "^5.0.1",
     "imagemin-svgo": "^5.2.2",
     "minimatch": "^3.0.4",
+    "rev-path": "^1.0.0",
+    "soup": "^0.1.5",
     "stream-to-array": "^2.3.0",
     "uglify-js": "^3.0.19"
   }
