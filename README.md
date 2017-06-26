@@ -55,7 +55,7 @@ html_minifier:
 **Note**: Check [html-minifier](https://www.npmjs.com/package/html-minifier#options-quick-reference) for more options.
 
 ### Javascripts (uglify_js)
-[https://www.npmjs.com/package/uglify-js](uglify-js) is used to minify javascripts.
+[uglify-js](https://www.npmjs.com/package/uglify-js) is used to minify javascripts.
 
 #### Options
 ``` yaml
@@ -77,7 +77,7 @@ uglify_js:
 **Note**: Check [uglify-js](https://www.npmjs.com/package/uglify-js#minify-options) for more options.
 
 ### Stylesheets (clean_css)
-[https://www.npmjs.com/package/clean-css](clean-css) is used to minify stylesheets.
+[clean-css](https://www.npmjs.com/package/clean-css) is used to minify stylesheets.
 
 #### Options
 ``` yaml
@@ -94,7 +94,7 @@ clean_css:
 
 
 ### Images (imagemin)
-[https://www.npmjs.com/package/clean-css](imagemin) is used to optimize images.
+[imagemin](https://www.npmjs.com/package/clean-css) is used to optimize images.
 
 #### Options
 ```yaml
