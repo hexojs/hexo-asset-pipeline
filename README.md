@@ -42,7 +42,7 @@ html_minifier:
   ignore_error: false
   exclude:
 ```
-- **enable** - Enable the plugin. Defaults to `true`.
+- **enable** - Enable the plugin. Defaults to `false`.
 - **ignore_error** - Ignore the error occurred on parsing html
 - **exclude**: Exclude files
 
@@ -61,7 +61,7 @@ uglifyjs:
   exclude: 
     - '*.min.js'
 ```
-- **enable** - Enable the plugin. Defaults to `true`.
+- **enable** - Enable the plugin. Defaults to `false`.
 - **mangle**: Mangle file names
 - **output**: Output options
 - **compress**: Compress options
@@ -80,7 +80,7 @@ clean_css:
   exclude: 
     - '*.min.css'
 ```
-- **enable** - Enable the plugin. Defaults to `true`.
+- **enable** - Enable the plugin. Defaults to `false`.
 - **exclude**: Exclude files
 
 
@@ -100,7 +100,7 @@ imagemin:
   pngquant: false
   progressive: false
 ```
-- **enable** - Enable the plugin. Defaults to `true`.
+- **enable** - Enable the plugin. Defaults to `false`.
 - **interlaced** - Interlace gif for progressive rendering. Defaults to `false`.
 - **multipass** - Optimize svg multiple times until it’s fully optimized. Defaults to `false`.
 - **optimizationLevel** - Select an optimization level between 0 and 7. Defaults to `2`.
