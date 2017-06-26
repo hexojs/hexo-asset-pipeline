@@ -1,18 +1,13 @@
 # hexo-asset-pipeline
-
 Asset pipeline for [Hexo](https://hexo.io/) to support minification and optimization of HTML, CSS, JS and images.
-
-Supports hexo 3.x.x.
+- Hexo 3: 1.x
 
 ## Installation
 ``` bash
 $ npm install hexo-asset-pipeline --save
 ```
-
 ## Configuration
-
-
-Add the following snippet in `_config.yml`. 
+Add the following snippet in `_config.yml`.
 
 Minimal config to enable filters for HTML, CSS, Js and images.
 ```yaml
@@ -34,15 +29,14 @@ asset_pipeline:
 - **imagemin** - Adding options for [imagemin](https://www.npmjs.com/package/imagemin).
 - **html_minifier** - Adding options for [html-minifier](https://www.npmjs.com/package/html-minifier).
 
-
 ## Components
 Following are the modules that are being used to process differnet types of assets.
 
 ### HTML (html_minifier)
-
 [html-minifier](https://www.npmjs.com/package/html-minifier) is used to minify the HTML files.
 
 Following is the config for html-minifier.
+
 #### Options
 ``` yaml
 html_minifier:
@@ -96,7 +90,6 @@ uglify_js:
   exclude: ['*.min.js']
 ```
 
-
 **Note**: Check [uglify-js](https://www.npmjs.com/package/uglify-js#minify-options) for more options.
 
 ### Stylesheets (clean_css)
@@ -119,9 +112,7 @@ clean_css:
   exclude: ['*.min.css']
 ```
 
-
 **Note**: Check [clean-css](https://www.npmjs.com/package/clean-css#use) for more options.
-
 
 ### Images (imagemin)
 [imagemin](https://www.npmjs.com/package/clean-css) is used to optimize images.
@@ -154,6 +145,7 @@ imagemin:
   pngquant: false
   progressive: false
 ```
+
 **Note**: Check [imagemin](https://www.npmjs.com/package/clean-css#use) for more options.
 
 ### Revisioning
@@ -168,7 +160,7 @@ revisioning:
 ```
 - **enable** - Enable the revisioning of assets. Defaults to `false`.
 - **keep** - Keep original assets. Defaults to `false`.
-- **selectors** - It is used so that custom implementations can be processed. Any attribute matching the key will have the asset url in the value. For instance in above example any element matching to `img[data-orign]` will have the URL for asset in `data-origin` attribute, this specific case can be helpful for [jquery lazyload](https://github.com/tuupola/jquery_lazyload) implementations.
+- **selectors** - It is used so that custom implementations can be processed. Any attribute matching the key should have the asset url in the value. For instance in above example any element matching to `img[data-orign]` will have the URL for asset in `data-origin` attribute, this specific case can be helpful for [jquery lazyload](https://github.com/tuupola/jquery_lazyload) implementations.
 
 #### Defaults for selectors;
 ```yaml
