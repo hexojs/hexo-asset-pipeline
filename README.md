@@ -183,3 +183,4 @@ revisioning:
 * Eslint and other configs
 * Test plugin for relative paths
 * Add option to add CDN
+* Logging config and options
