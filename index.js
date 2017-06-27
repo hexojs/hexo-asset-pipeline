@@ -100,7 +100,3 @@ hexo.extend.filter.register('after_init', function(){
     revIndex: {}
   }
 });
-hexo.extend.filter.register('before_exit', function(){
-  //Cleanup
-  delete hexo.assetPipeline;
-});
