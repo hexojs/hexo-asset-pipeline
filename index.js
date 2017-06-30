@@ -16,7 +16,7 @@ if(config.asset_pipeline){
     exclude: ['*.min.css']
   };
 
-  config.asset_pipeline.clean_css = Object.assign(cleanCssDefaults, cssConfig, config.asset_pipeline.clean_css);
+  config.asset_pipeline.clean_css = Object.assign(cleanCssDefaults, cssConfig, config.asset_pipeline.clean_css || {});
 
   hexo.extend.filter.register('after_render:css', filters.css);
 
@@ -31,7 +31,7 @@ if(config.asset_pipeline){
     exclude: ['*.min.js']
   };
 
-  config.asset_pipeline.uglify_js = Object.assign(uglifyjsDefaults, jsConfig, config.asset_pipeline.uglify_js);
+  config.asset_pipeline.uglify_js = Object.assign(uglifyjsDefaults, jsConfig, config.asset_pipeline.uglify_js || {});
 
   hexo.extend.filter.register('after_render:js', filters.js);
 
@@ -53,7 +53,7 @@ if(config.asset_pipeline){
     exclude: []
   }
 
-  config.asset_pipeline.html_minifier = Object.assign(htmlMinifierDefaults, htmlConfig, config.asset_pipeline.html_minifier);
+  config.asset_pipeline.html_minifier = Object.assign(htmlMinifierDefaults, htmlConfig, config.asset_pipeline.html_minifier || {});
 
   hexo.extend.filter.register('after_render:html', filters.html);
 
@@ -70,7 +70,7 @@ if(config.asset_pipeline){
   }
   const imageConfig = {};
 
-  config.asset_pipeline.imagemin = Object.assign(imageminDefaults, imageConfig, config.asset_pipeline.imagemin);
+  config.asset_pipeline.imagemin = Object.assign(imageminDefaults, imageConfig, config.asset_pipeline.imagemin || {});
 
   hexo.extend.filter.register('after_generate', filters.image);
 
@@ -93,7 +93,7 @@ if(config.asset_pipeline){
     }
   };
 
-  config.asset_pipeline.revisioning= Object.assign(revisioningDefaults, soupConfig, config.asset_pipeline.revisioning);
+  config.asset_pipeline.revisioning= Object.assign(revisioningDefaults, soupConfig, config.asset_pipeline.revisioning || {});
 
   if(config.asset_pipeline.revisioning.enable){
     hexo.extend.filter.register('after_generate', revision);
