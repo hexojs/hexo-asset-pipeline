@@ -117,7 +117,7 @@ clean_css:
 **Note**: Check [clean-css](https://www.npmjs.com/package/clean-css#use) for more options.
 
 ### Images (imagemin)
-[imagemin](https://www.npmjs.com/package/clean-css) is used to optimize images.
+[imagemin](https://www.npmjs.com/package/imagemin) is used to optimize images.
 
 Following is the config for imagemin.
 #### Options
