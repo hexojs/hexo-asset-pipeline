@@ -155,17 +155,23 @@ imagemin:
 revisioning:
   enable: true
   keep: true
+  exclude: ['robots.txt', '*.json']
   selectors:
     'img[data-orign]':  data-orign
     'img[data-src]': 'data-src'
     'img[src]': 'src'
 ```
-- **enable** - Enable the revisioning of assets. Defaults to `false`.
+- **enable** - Enable revisioning of assets. Defaults to `false`.
 - **keep** - Keep original assets. Defaults to `false`.
+- **exclude** - Exclude files from revisioning.
 - **selectors** - It is used so that custom implementations can be processed. Any attribute matching the key should have the asset url in the value. For instance in above example any element matching to `img[data-orign]` will have the URL for asset in `data-origin` attribute, this specific case can be helpful for [jquery lazyload](https://github.com/tuupola/jquery_lazyload) implementations.
 
-#### Defaults for selectors;
+#### Revisioning defaults;
 ```yaml
+revisioning:
+  enable: false
+  keep: false
+  exclude: []
   selectors:
     'img[data-src]': 'data-src'
     'img[src]': 'src'
@@ -178,9 +184,10 @@ revisioning:
     'video[poster]': 'poster'
 ```
 
-###TODO
-* Add tests
-* Eslint and other configs
+#### Note: To match paths in `exclude` option, glob matching is done using [minmatch](https://github.com/isaacs/minimatch).
+
+#### TODO
+* Eslint configs
 * Test plugin for relative paths
 * Add option to add CDN
 * Logging config and options
