@@ -78,7 +78,9 @@ if(config.asset_pipeline){
   /**
    * Hook to enable revisioning.
    */
-  const revisioningDefaults = {};
+  const revisioningDefaults = {
+    exclude: []
+  };
   const soupConfig = {
     selectors: {
       'img[data-src]': 'data-src',
