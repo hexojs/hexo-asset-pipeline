@@ -1,3 +1,5 @@
+'use strict';
+
 const filters = require('./lib/filters');
 const revision = require('./lib/revision');
 const config = hexo.config;
