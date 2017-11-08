@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bhaskarmelkani/hexo-asset-pipeline.git"
+    "url": "git+https://github.com/hexojs/hexo-asset-pipeline.git"
   },
   "keywords": [
     "hexo",
@@ -27,9 +27,9 @@
   "author": "bhaskarmelkani <melkani.bhaskar@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bhaskarmelkani/hexo-asset-pipeline/issues"
+    "url": "https://github.com/hexojs/hexo-asset-pipeline/issues"
   },
-  "homepage": "https://github.com/bhaskarmelkani/hexo-asset-pipeline#readme",
+  "homepage": "https://github.com/hexojs/hexo-asset-pipeline#readme",
   "dependencies": {
     "bluebird": "^3.5.0",
     "clean-css": "^4.1.4",
@@ -41,9 +41,9 @@
     "imagemin-mozjpeg": "^6.0.0",
     "imagemin-optipng": "^5.2.1",
     "imagemin-pngquant": "^5.0.1",
-    "imagemin-svgo": "^5.2.2",
+    "imagemin-svgo": "^6.0.0",
     "minimatch": "^3.0.4",
-    "rev-path": "^1.0.0",
+    "rev-path": "^2.0.0",
     "soup": "^0.1.5",
     "stream-to-array": "^2.3.0",
     "uglify-js": "^3.0.19"
