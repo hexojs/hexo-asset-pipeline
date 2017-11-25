@@ -1,5 +1,5 @@
 # hexo-asset-pipeline
-[![Dependency Status](https://david-dm.org/bhaskarmelkani/hexo-asset-pipeline/status.svg?style=flat)](https://david-dm.org/bhaskarmelkani/hexo-asset-pipeline) [![npm version](https://badge.fury.io/js/hexo-asset-pipeline.svg)](https://badge.fury.io/js/hexo-asset-pipeline)    [![GitHub issues](https://img.shields.io/github/issues/bhaskarmelkani/hexo-asset-pipeline.svg)](https://github.com/bhaskarmelkani/hexo-asset-pipeline/issues)
+[![Dependency Status](https://david-dm.org/hexojs/hexo-asset-pipeline/status.svg?style=flat)](https://david-dm.org/hexojs/hexo-asset-pipeline) [![npm version](https://badge.fury.io/js/hexo-asset-pipeline.svg)](https://badge.fury.io/js/hexo-asset-pipeline)    [![GitHub issues](https://img.shields.io/github/issues/hexojs/hexo-asset-pipeline.svg)](https://github.com/hexojs/hexo-asset-pipeline/issues)
 
 Asset pipeline for [Hexo](https://hexo.io/) to support minification and optimization of HTML, CSS, JS and images.
 - Hexo 3.x.x
