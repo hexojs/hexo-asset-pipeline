@@ -52,7 +52,7 @@ html_minifier:
 
 #### html_minifier defaults
 ```yaml
-html_minifier
+html_minifier:
   ignoreCustomComments: [/^\s*more/]
   removeComments: true
   removeCommentsFromCDATA: true
