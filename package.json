@@ -7,7 +7,12 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "support/"
+    ]
   },
   "repository": {
     "type": "git",
@@ -47,5 +52,11 @@
     "soup": "^0.1.5",
     "stream-to-array": "^2.3.0",
     "uglify-js": "^3.0.19"
+  },
+  "devDependencies": {
+    "hexo": "^3.7.1",
+    "hexo-renderer-ejs": "^0.3.1",
+    "hexo-test-utils": "^0.2.1",
+    "jest": "^22.4.3"
   }
 }
