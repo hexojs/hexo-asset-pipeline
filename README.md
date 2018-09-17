@@ -148,7 +148,7 @@ imagemin:
   progressive: false
 ```
 
-**Note**: Check [imagemin plugins](https://www.npmjs.com/package/imagemin#options-1) for more options.
+**Note**: Check [imagemin plugins](https://www.npmjs.com/package/imagemin#plugins) for more options.
 
 ### Revisioning
 ```yaml
