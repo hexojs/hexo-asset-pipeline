@@ -30,3 +30,14 @@ test('preserves original content when disabled', async () => {
 
   expect(content.toString().trim()).toBe(originalContent);
 });
+
+test('respects the exclude option', async () => {
+  const ctx = await sandbox({fixtureName: 'css'});
+  mockConfig(ctx, 'asset_pipeline', {clean_css: {enable: true, exclude: ['**/mystyle.css']}});
+
+  await process(ctx);
+
+  const content = await contentFor(ctx, 'mystyle.css');
+
+  expect(content.toString().trim()).toBe(originalContent);
+});

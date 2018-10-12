@@ -33,3 +33,14 @@ test('preserves original content when disabled', async () => {
 
   expect(content.toString().trim()).toBe(originalContent);
 });
+
+test('respects the exclude option', async () => {
+  const ctx = await sandbox({fixtureName: 'html'});
+  mockConfig(ctx, 'asset_pipeline', {html_minifier: {enable: true, exclude: ['**/*.+(html|ejs)']}});
+
+  await process(ctx);
+
+  const content = await contentFor(ctx, 'test.html');
+
+  expect(content.toString().trim()).toBe(originalContent);
+});
