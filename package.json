@@ -48,6 +48,7 @@
     "imagemin-optipng": "^6.0.0",
     "imagemin-pngquant": "^6.0.0",
     "imagemin-svgo": "^7.0.0",
+    "is-binary-buffer": "^2.0.0",
     "lodash.clonedeep": "^4.5.0",
     "minimatch": "^3.0.4",
     "rev-path": "^2.0.0",
