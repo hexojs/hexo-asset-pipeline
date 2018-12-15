@@ -117,8 +117,7 @@ if (config.asset_pipeline) {
   hexo.extend.filter.register('after_init', function() {
     // Setup assetPipeline for caching data
     hexo.assetPipeline = {
-      revIndex: Object.create(null),
-      cleanDb: new Map()
+      revIndex: Object.create(null)
     };
   });
 
