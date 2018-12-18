@@ -124,6 +124,7 @@ Following is the config for imagemin.
 ```yaml
 imagemin:
   enable: true
+  exclude: ['images/**', 'en/**', 'fr/**']
   interlaced: false
   multipass: false
   optimizationLevel: 2
