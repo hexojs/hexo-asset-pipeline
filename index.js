@@ -114,9 +114,9 @@ if (config.asset_pipeline) {
 
   config.asset_pipeline.revisioning = Object.assign({}, revisioningDefaults, config.asset_pipeline.revisioning || {});
 
-  hexo.extend.filter.register('after_init', function() {
+  hexo.extend.filter.register('before_generate', function () {
     // Setup assetPipeline for caching data
-    hexo.assetPipeline = {
+    hexo.assetPipeline = hexo.assetPipeline  || {
       revIndex: Object.create(null)
     };
   });
