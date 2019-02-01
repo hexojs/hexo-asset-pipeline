@@ -44,7 +44,7 @@
     "imagemin": "^6.0.0",
     "imagemin-gifsicle": "^6.0.1",
     "imagemin-jpegtran": "^5.0.2",
-    "imagemin-mozjpeg": "^7.0.0",
+    "imagemin-mozjpeg": "^8.0.0",
     "imagemin-optipng": "^6.0.0",
     "imagemin-pngquant": "^7.0.0",
     "imagemin-svgo": "^7.0.0",
