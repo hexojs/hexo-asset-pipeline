@@ -39,7 +39,7 @@
   "dependencies": {
     "bluebird": "^3.5.0",
     "clean-css": "^4.1.4",
-    "hasha": "^3.0.0",
+    "hasha": "^4.0.0",
     "html-minifier": "^3.5.2",
     "imagemin": "^6.0.0",
     "imagemin-gifsicle": "^6.0.1",
