@@ -41,7 +41,7 @@
     "clean-css": "^4.1.4",
     "hasha": "^5.0.0",
     "html-minifier": "^4.0.0",
-    "imagemin": "^6.0.0",
+    "imagemin": "^7.0.0",
     "imagemin-gifsicle": "^6.0.1",
     "imagemin-jpegtran": "^6.0.0",
     "imagemin-mozjpeg": "^8.0.0",
