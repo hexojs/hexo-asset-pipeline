@@ -2,10 +2,14 @@
   "name": "hexo-asset-pipeline",
   "version": "1.8.0",
   "description": "A hexo plugin to minify/optimize HTML, CSS, JS and images. Supports revisioning of assets.",
-  "main": "index",
+  "main": "index.js",
   "directories": {
     "lib": "lib"
   },
+  "files": [
+    "index.js",
+    "lib/"
+  ],
   "scripts": {
     "test": "jest"
   },
