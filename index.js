@@ -4,12 +4,11 @@ const filters = require('./lib/filters');
 const revision = require('./lib/revision');
 const config = hexo.config;
 
-
 /**
  * Start things is hexo.config.asset_pipeline is defined in _config.yaml.
  */
 
-if(config.asset_pipeline){
+if (config.asset_pipeline) {
   /**
    * CSS config.
    */
@@ -18,10 +17,13 @@ if(config.asset_pipeline){
     exclude: ['*.min.css']
   };
 
-  config.asset_pipeline.clean_css = Object.assign(cleanCssDefaults, cssConfig, config.asset_pipeline.clean_css || {});
+  config.asset_pipeline.clean_css = Object.assign(
+    cleanCssDefaults,
+    cssConfig,
+    config.asset_pipeline.clean_css || {}
+  );
 
   hexo.extend.filter.register('after_render:css', filters.css);
-
 
   /**
    * Js config.
@@ -33,10 +35,13 @@ if(config.asset_pipeline){
     exclude: ['*.min.js']
   };
 
-  config.asset_pipeline.uglify_js = Object.assign(uglifyjsDefaults, jsConfig, config.asset_pipeline.uglify_js || {});
+  config.asset_pipeline.uglify_js = Object.assign(
+    uglifyjsDefaults,
+    jsConfig,
+    config.asset_pipeline.uglify_js || {}
+  );
 
   hexo.extend.filter.register('after_render:js', filters.js);
-
 
   /**
    * HTML config.
@@ -53,12 +58,15 @@ if(config.asset_pipeline){
   };
   const htmlConfig = {
     exclude: []
-  }
+  };
 
-  config.asset_pipeline.html_minifier = Object.assign(htmlMinifierDefaults, htmlConfig, config.asset_pipeline.html_minifier || {});
+  config.asset_pipeline.html_minifier = Object.assign(
+    htmlMinifierDefaults,
+    htmlConfig,
+    config.asset_pipeline.html_minifier || {}
+  );
 
   hexo.extend.filter.register('after_render:html', filters.html);
-
 
   /**
    * Image config.
@@ -69,21 +77,28 @@ if(config.asset_pipeline){
     optimizationLevel: 3,
     pngquant: false,
     progressive: false
-  }
+  };
   const imageConfig = {};
 
-  config.asset_pipeline.imagemin = Object.assign(imageminDefaults, imageConfig, config.asset_pipeline.imagemin || {});
+  config.asset_pipeline.imagemin = Object.assign(
+    imageminDefaults,
+    imageConfig,
+    config.asset_pipeline.imagemin || {}
+  );
 
   hexo.extend.filter.register('after_generate', filters.image);
-
 
   /**
    * Hook to enable revisioning.
    */
   const revisioningDefaults = {
-    exclude: []
-  };
-  const soupConfig = {
+    relative_dirs: [
+      // default hexo theme directories
+      'css',
+      'js',
+      'images'
+    ],
+    exclude: [],
     selectors: {
       'img[data-src]': 'data-src',
       'img[src]': 'src',
@@ -97,16 +112,22 @@ if(config.asset_pipeline){
     }
   };
 
-  config.asset_pipeline.revisioning= Object.assign(revisioningDefaults, soupConfig, config.asset_pipeline.revisioning || {});
+  config.asset_pipeline.revisioning = Object.assign({}, revisioningDefaults, config.asset_pipeline.revisioning || {});
 
-  if(config.asset_pipeline.revisioning.enable){
-    hexo.extend.filter.register('after_generate', revision);
+  hexo.extend.filter.register('before_generate', function () {
+    // Setup assetPipeline for caching data
+    hexo.assetPipeline = hexo.assetPipeline  || {
+      revIndex: Object.create(null)
+    };
+  });
+
+  if (config.asset_pipeline.revisioning.enable) {
+    hexo.extend.filter.register('after_generate', revision.hashFiles);
+    hexo.extend.filter.register('after_generate', revision.replaceLinks);
   }
 
-  hexo.extend.filter.register('after_init', function(){
-    // Setup assetPipeline for caching data
-    hexo.assetPipeline = {
-      revIndex: {}
-    }
+  hexo.extend.filter.register('before_exit', function() {
+    // Clean plugin information
+    delete hexo.assetPipeline;
   });
 }
