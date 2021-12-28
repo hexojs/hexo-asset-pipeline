@@ -60,7 +60,7 @@
     "uglify-js": "^3.0.19"
   },
   "devDependencies": {
-    "hexo": "^5.4.0",
+    "hexo": "^6.0.0",
     "hexo-renderer-ejs": "^1.0.0",
     "hexo-test-utils": "^0.4.1",
     "jest": "^27.0.6"
