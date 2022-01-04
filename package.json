@@ -54,7 +54,7 @@
     "imagemin-svgo": "^9.0.0",
     "lodash.clonedeep": "^4.5.0",
     "micromatch": "^4.0.2",
-    "rev-path": "^2.0.0",
+    "rev-path": "^3.0.0",
     "soup": "^0.1.5",
     "stream-to-array": "^2.3.0",
     "uglify-js": "^3.0.19"
