@@ -187,7 +187,7 @@ revisioning:
     'video[poster]': 'poster'
 ```
 
-#### Note: To match paths in `exclude` option, glob matching is done using [minmatch](https://github.com/isaacs/minimatch).
+#### Note: To match paths in `exclude` option, glob matching is done using [micromatch](https://github.com/micromatch/micromatch).
 
 #### TODO
 * Eslint configs
