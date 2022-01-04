@@ -62,7 +62,7 @@
   "devDependencies": {
     "hexo": "^6.0.0",
     "hexo-renderer-ejs": "^2.0.0",
-    "hexo-test-utils": "^0.5.0",
+    "hexo-test-utils": "^0.6.0",
     "jest": "^27.0.6"
   }
 }
