@@ -51,7 +51,7 @@
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-pngquant": "^8.0.0",
-    "imagemin-svgo": "^9.0.0",
+    "imagemin-svgo": "^10.0.1",
     "lodash.clonedeep": "^4.5.0",
     "micromatch": "^4.0.2",
     "rev-path": "^2.0.0",
