@@ -1,3 +1,7 @@
+# DEPRECATED!
+
+hexo-asset-pipeline has been deprecated.
+
 # hexo-asset-pipeline
 
 [![Dependency Status](https://david-dm.org/hexojs/hexo-asset-pipeline/status.svg?style=flat)](https://david-dm.org/hexojs/hexo-asset-pipeline)
