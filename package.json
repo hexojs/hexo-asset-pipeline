@@ -42,7 +42,7 @@
   "homepage": "https://github.com/hexojs/hexo-asset-pipeline#readme",
   "dependencies": {
     "bluebird": "^3.5.0",
-    "clean-css": "^4.1.4",
+    "clean-css": "^5.3.1",
     "hasha": "^5.0.0",
     "html-minifier": "^4.0.0",
     "imagemin": "^7.0.0",
